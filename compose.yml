@@ -1,0 +1,13 @@
+services:
+  db_pg_15:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+    profiles:
+      - dev
+    ports:
+      - 5432
+    labels:
+      org.springframework.boot.service-connection: postgres # если springframework не распознал образ и для чего он
